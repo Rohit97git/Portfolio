@@ -1,27 +1,33 @@
 import React from "react";
 
 const Skills = () => {
-  const skills = [
-    "React",
-    "Node.js",
-    "MongoDB",
-    "TailwindCSS",
-    "Git",
-    "Express",
-  ];
+  const skillGroups = {
+    Languages: ["JavaScript", "TypeScript", "Java", "SQL", "HTML5", "CSS3"],
+    Frameworks: ["React.js", "Next.js", "Redux", "Node.js", "Express.js"],
+    Databases: ["PostgreSQL", "MongoDB", "MySQL", "Firebase"],
+    Tools: ["Git", "GitHub", "Postman", "Docker", "NPM", "VS Code"],
+  };
 
   return (
-    <section id="skills" class="py-20 bg-white">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Skills</h2>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <span class="px-4 py-2 bg-gray-200 rounded-full">JavaScript</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full">React.js</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full">Node.js</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full">MongoDB</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full">TypeScript</span>
-          <span class="px-4 py-2 bg-gray-200 rounded-full">Express.js</span>
-        </div>
+    <section id="skills" className="py-20 bg-white px-4">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-6">Technical Skills</h2>
+
+        {Object.entries(skillGroups).map(([category, skills], i) => (
+          <div key={i} className="mb-6">
+            <h3 className="text-xl font-semibold mb-3">{category}</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="px-4 py-2 bg-gray-200 rounded-full text-gray-700"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

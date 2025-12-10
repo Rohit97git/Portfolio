@@ -1,43 +1,37 @@
-import { useState } from "react";
-import api from "../api";
-
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  const sendMessage = async (e) => {
-    e.preventDefault();
-
-    try {
-      const res = await api.post("/api/messages", form);
-      console.log(res.data);
-      alert("Message sent!");
-    } catch (err) {
-      console.error(err);
-      alert("Failed to send message.");
-    }
-  };
-
   return (
-    <form onSubmit={sendMessage} className="space-y-4">
-      <input
-        type="text"
-        placeholder="Your name"
-        onChange={(e) => setForm({ ...form, name: e.target.value })}
-        className="border p-2 w-full"
-      />
-      <input
-        type="email"
-        placeholder="Your email"
-        onChange={(e) => setForm({ ...form, email: e.target.value })}
-        className="border p-2 w-full"
-      />
-      <textarea
-        placeholder="Message"
-        onChange={(e) => setForm({ ...form, message: e.target.value })}
-        className="border p-2 w-full"
-      />
+    <section id="contact" className="py-20 bg-white px-4">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
 
-      <button className="bg-blue-600 text-white px-4 py-2">Send</button>
-    </form>
+        <p className="text-gray-700 mb-8">
+          Email: <strong>rohitv1797@gmail.com</strong>
+        </p>
+
+        <form className="space-y-4 max-w-lg mx-auto">
+          <input
+            className="border p-3 w-full rounded"
+            type="text"
+            placeholder="Your Name"
+          />
+
+          <input
+            className="border p-3 w-full rounded"
+            type="email"
+            placeholder="Your Email"
+          />
+
+          <textarea
+            className="border p-3 w-full rounded"
+            placeholder="Message"
+            rows="4"
+          ></textarea>
+
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
   );
 }
