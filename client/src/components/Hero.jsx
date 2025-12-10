@@ -2,14 +2,14 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="text-center py-20">
-      <img
-        src="/my-photo.jpg"
-        alt="profile"
-        className="w-40 h-40 mx-auto rounded-full shadow"
-      />
-      <h1 className="text-4xl font-bold mt-6">Rohit Verma</h1>
-      <p className="text-xl text-gray-600 mt-2">Full-Stack Developer</p>
+    <section class="min-h-screen flex flex-col justify-center items-center text-center bg-gray-50">
+      <h1 class="text-4xl font-bold">Hi, I'm Rohit Verma</h1>
+      <p class="text-xl text-gray-600 mt-4">
+        Full-Stack Developer | React.js • Node.js • MongoDB
+      </p>
+      <a href="#projects" class="mt-6 px-6 py-2 bg-black text-white rounded-lg">
+        View My Work
+      </a>
     </section>
   );
 };

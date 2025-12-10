@@ -11,18 +11,17 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="max-w-4xl mx-auto p-6">
-      <h2 className="text-3xl font-bold mb-4">Skills</h2>
-
-      <div className="flex flex-wrap gap-3">
-        {skills.map((skill) => (
-          <span
-            key={skill}
-            className="px-4 py-2 bg-blue-600 text-white rounded-full text-sm"
-          >
-            {skill}
-          </span>
-        ))}
+    <section id="skills" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Skills</h2>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <span class="px-4 py-2 bg-gray-200 rounded-full">JavaScript</span>
+          <span class="px-4 py-2 bg-gray-200 rounded-full">React.js</span>
+          <span class="px-4 py-2 bg-gray-200 rounded-full">Node.js</span>
+          <span class="px-4 py-2 bg-gray-200 rounded-full">MongoDB</span>
+          <span class="px-4 py-2 bg-gray-200 rounded-full">TypeScript</span>
+          <span class="px-4 py-2 bg-gray-200 rounded-full">Express.js</span>
+        </div>
       </div>
     </section>
   );
