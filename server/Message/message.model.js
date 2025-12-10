@@ -1,0 +1,21 @@
+import mongoose from "mongoose";
+
+const MessageSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Name is required"],
+    },
+    email: {
+      type: String,
+      required: [true, "Email is required"],
+    },
+    message: {
+      type: String,
+      required: [true, "Message cannot be empty"],
+    },
+  },
+  { timestamps: true }
+);
+
+export default mongoose.model("Message", MessageSchema);
