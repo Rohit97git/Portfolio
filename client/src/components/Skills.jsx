@@ -9,9 +9,11 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-white px-4">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">Technical Skills</h2>
+    <section id="skills" className="py-10 px-4 bg-gray-50">
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-blue-600 mb-6">
+          Technical Skills
+        </h2>
 
         {Object.entries(skillGroups).map(([category, skills], i) => (
           <div key={i} className="mb-6">
